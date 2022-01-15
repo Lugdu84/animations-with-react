@@ -12,8 +12,8 @@ function App() {
           <Navbar />
           <Switch>
             <Route path="/" exact component={Liste}/>
-            <Route path="/stateAnim" exact component={Liste}/>
-            <Route path="/scroll" exact component={Liste}/>
+            <Route path="/stateAnim" exact component={StateAnim}/>
+            <Route path="/scroll" exact component={Scroll}/>
           </Switch>
         </div>
       </Router>

@@ -17,7 +17,6 @@ export default function Liste() {
     }
   })
 
-  console.log(trail)
   return (
     <div className='list-container'>
       {trail.map((cardStyle, index) => {
