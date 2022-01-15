@@ -1,10 +1,50 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "./Scroll.css"
+import {Waypoint} from "react-waypoint"
+import {useSpring, animated} from "react-spring"
 
 export default function Scroll() {
+
+  const [toggleTxt, setToggleTxt] = useState(false)
+
+  const animation = useSpring({
+    opacity: toggleTxt ? 1 : 0,
+    transform: toggleTxt ? "translateX(0)" : "translateX(-50%)"
+  })
+
   return (
     <div>
-      SCROLL
+      <p className="scroll-txt">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus porro optio quos nesciunt aliquam, officiis tenetur magni praesentium quia blanditiis ducimus ea labore quod necessitatibus commodi, perferendis enim sint autem soluta ex! Quam, laboriosam! Accusamus officiis dolore cum nesciunt nostrum fugiat necessitatibus, eligendi quaerat velit. Voluptatibus tempore ipsa, ad nisi sit molestias praesentium et, impedit temporibus consequuntur soluta nemo ex dolorem beatae voluptates dicta saepe facere illo vero itaque? Nemo a, atque reprehenderit totam esse iusto minima natus! Iure porro corporis voluptatibus quaerat, fuga perspiciatis pariatur placeat! Magni quae numquam doloribus assumenda rem facere molestias illum delectus vitae. Cumque illo excepturi necessitatibus, quis eos id vel rem nulla distinctio esse sed accusamus officiis dolore tempore mollitia velit quo quia ipsam suscipit facere? Praesentium tempore enim ad magnam earum necessitatibus beatae, porro natus repudiandae culpa quod molestias amet, id, dolorum eaque similique tempora possimus nemo impedit expedita dolor quos aperiam placeat voluptatem! Laborum voluptates quos accusamus nostrum ab quod ipsam eveniet? Ipsam laborum accusantium reiciendis accusamus delectus itaque sint modi temporibus assumenda cupiditate incidunt dolore, unde voluptatem. Earum possimus perferendis doloremque soluta expedita dolorem totam ab voluptates alias excepturi iste iure error, cum quia aspernatur consequuntur obcaecati vero veniam nostrum laboriosam!
+      </p>
+      <p className="scroll-txt">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus porro optio quos nesciunt aliquam, officiis tenetur magni praesentium quia blanditiis ducimus ea labore quod necessitatibus commodi, perferendis enim sint autem soluta ex! Quam, laboriosam! Accusamus officiis dolore cum nesciunt nostrum fugiat necessitatibus, eligendi quaerat velit. Voluptatibus tempore ipsa, ad nisi sit molestias praesentium et, impedit temporibus consequuntur soluta nemo ex dolorem beatae voluptates dicta saepe facere illo vero itaque? Nemo a, atque reprehenderit totam esse iusto minima natus! Iure porro corporis voluptatibus quaerat, fuga perspiciatis pariatur placeat! Magni quae numquam doloribus assumenda rem facere molestias illum delectus vitae. Cumque illo excepturi necessitatibus, quis eos id vel rem nulla distinctio esse sed accusamus officiis dolore tempore mollitia velit quo quia ipsam suscipit facere? Praesentium tempore enim ad magnam earum necessitatibus beatae, porro natus repudiandae culpa quod molestias amet, id, dolorum eaque similique tempora possimus nemo impedit expedita dolor quos aperiam placeat voluptatem! Laborum voluptates quos accusamus nostrum ab quod ipsam eveniet? Ipsam laborum accusantium reiciendis accusamus delectus itaque sint modi temporibus assumenda cupiditate incidunt dolore, unde voluptatem. Earum possimus perferendis doloremque soluta expedita dolorem totam ab voluptates alias excepturi iste iure error, cum quia aspernatur consequuntur obcaecati vero veniam nostrum laboriosam!
+      </p>
+      <Waypoint
+      bottomOffset="30%"
+        onEnter={() => {
+          if (!toggleTxt) {setToggleTxt(true)}
+        }}
+      />
+      <animated.div style={animation} className="cta-section">
+        <h2>N'en ratez pas une miette</h2>
+        <form>
+          <label htmlFor="email">Inscrivez-vous à la newsletter</label>
+          <input type="email" id='email' />
+        </form>
+      </animated.div>
+      <p className="scroll-txt">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus porro optio quos nesciunt aliquam, officiis tenetur magni praesentium quia blanditiis ducimus ea labore quod necessitatibus commodi, perferendis enim sint autem soluta ex! Quam, laboriosam! Accusamus officiis dolore cum nesciunt nostrum fugiat necessitatibus, eligendi quaerat velit. Voluptatibus tempore ipsa, ad nisi sit molestias praesentium et, impedit temporibus consequuntur soluta nemo ex dolorem beatae voluptates dicta saepe facere illo vero itaque? Nemo a, atque reprehenderit totam esse iusto minima natus! Iure porro corporis voluptatibus quaerat, fuga perspiciatis pariatur placeat! Magni quae numquam doloribus assumenda rem facere molestias illum delectus vitae. Cumque illo excepturi necessitatibus, quis eos id vel rem nulla distinctio esse sed accusamus officiis dolore tempore mollitia velit quo quia ipsam suscipit facere? Praesentium tempore enim ad magnam earum necessitatibus beatae, porro natus repudiandae culpa quod molestias amet, id, dolorum eaque similique tempora possimus nemo impedit expedita dolor quos aperiam placeat voluptatem! Laborum voluptates quos accusamus nostrum ab quod ipsam eveniet? Ipsam laborum accusantium reiciendis accusamus delectus itaque sint modi temporibus assumenda cupiditate incidunt dolore, unde voluptatem. Earum possimus perferendis doloremque soluta expedita dolorem totam ab voluptates alias excepturi iste iure error, cum quia aspernatur consequuntur obcaecati vero veniam nostrum laboriosam!
+      </p>
+      <p className="scroll-txt">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus porro optio quos nesciunt aliquam, officiis tenetur magni praesentium quia blanditiis ducimus ea labore quod necessitatibus commodi, perferendis enim sint autem soluta ex! Quam, laboriosam! Accusamus officiis dolore cum nesciunt nostrum fugiat necessitatibus, eligendi quaerat velit. Voluptatibus tempore ipsa, ad nisi sit molestias praesentium et, impedit temporibus consequuntur soluta nemo ex dolorem beatae voluptates dicta saepe facere illo vero itaque? Nemo a, atque reprehenderit totam esse iusto minima natus! Iure porro corporis voluptatibus quaerat, fuga perspiciatis pariatur placeat! Magni quae numquam doloribus assumenda rem facere molestias illum delectus vitae. Cumque illo excepturi necessitatibus, quis eos id vel rem nulla distinctio esse sed accusamus officiis dolore tempore mollitia velit quo quia ipsam suscipit facere? Praesentium tempore enim ad magnam earum necessitatibus beatae, porro natus repudiandae culpa quod molestias amet, id, dolorum eaque similique tempora possimus nemo impedit expedita dolor quos aperiam placeat voluptatem! Laborum voluptates quos accusamus nostrum ab quod ipsam eveniet? Ipsam laborum accusantium reiciendis accusamus delectus itaque sint modi temporibus assumenda cupiditate incidunt dolore, unde voluptatem. Earum possimus perferendis doloremque soluta expedita dolorem totam ab voluptates alias excepturi iste iure error, cum quia aspernatur consequuntur obcaecati vero veniam nostrum laboriosam!
+      </p>
+      <p className="scroll-txt">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus porro optio quos nesciunt aliquam, officiis tenetur magni praesentium quia blanditiis ducimus ea labore quod necessitatibus commodi, perferendis enim sint autem soluta ex! Quam, laboriosam! Accusamus officiis dolore cum nesciunt nostrum fugiat necessitatibus, eligendi quaerat velit. Voluptatibus tempore ipsa, ad nisi sit molestias praesentium et, impedit temporibus consequuntur soluta nemo ex dolorem beatae voluptates dicta saepe facere illo vero itaque? Nemo a, atque reprehenderit totam esse iusto minima natus! Iure porro corporis voluptatibus quaerat, fuga perspiciatis pariatur placeat! Magni quae numquam doloribus assumenda rem facere molestias illum delectus vitae. Cumque illo excepturi necessitatibus, quis eos id vel rem nulla distinctio esse sed accusamus officiis dolore tempore mollitia velit quo quia ipsam suscipit facere? Praesentium tempore enim ad magnam earum necessitatibus beatae, porro natus repudiandae culpa quod molestias amet, id, dolorum eaque similique tempora possimus nemo impedit expedita dolor quos aperiam placeat voluptatem! Laborum voluptates quos accusamus nostrum ab quod ipsam eveniet? Ipsam laborum accusantium reiciendis accusamus delectus itaque sint modi temporibus assumenda cupiditate incidunt dolore, unde voluptatem. Earum possimus perferendis doloremque soluta expedita dolorem totam ab voluptates alias excepturi iste iure error, cum quia aspernatur consequuntur obcaecati vero veniam nostrum laboriosam!
+      </p>
+      <p className="scroll-txt">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus porro optio quos nesciunt aliquam, officiis tenetur magni praesentium quia blanditiis ducimus ea labore quod necessitatibus commodi, perferendis enim sint autem soluta ex! Quam, laboriosam! Accusamus officiis dolore cum nesciunt nostrum fugiat necessitatibus, eligendi quaerat velit. Voluptatibus tempore ipsa, ad nisi sit molestias praesentium et, impedit temporibus consequuntur soluta nemo ex dolorem beatae voluptates dicta saepe facere illo vero itaque? Nemo a, atque reprehenderit totam esse iusto minima natus! Iure porro corporis voluptatibus quaerat, fuga perspiciatis pariatur placeat! Magni quae numquam doloribus assumenda rem facere molestias illum delectus vitae. Cumque illo excepturi necessitatibus, quis eos id vel rem nulla distinctio esse sed accusamus officiis dolore tempore mollitia velit quo quia ipsam suscipit facere? Praesentium tempore enim ad magnam earum necessitatibus beatae, porro natus repudiandae culpa quod molestias amet, id, dolorum eaque similique tempora possimus nemo impedit expedita dolor quos aperiam placeat voluptatem! Laborum voluptates quos accusamus nostrum ab quod ipsam eveniet? Ipsam laborum accusantium reiciendis accusamus delectus itaque sint modi temporibus assumenda cupiditate incidunt dolore, unde voluptatem. Earum possimus perferendis doloremque soluta expedita dolorem totam ab voluptates alias excepturi iste iure error, cum quia aspernatur consequuntur obcaecati vero veniam nostrum laboriosam!
+      </p>
     </div>
   )
 }
