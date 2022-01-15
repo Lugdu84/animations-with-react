@@ -43,6 +43,9 @@ export default function StateAnim() {
     setTimeout(() => {
       setFirstDisplay(false)
     }, 1000);
+    return () => {
+      setInputData({})
+    }
   }, [])
 
   const listTransitions = useTransition(inputData, {
